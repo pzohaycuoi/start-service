@@ -15,6 +15,7 @@ foreach ($service in $serviceCollection) {
   }
 }
 
+# Get status after trying to start service
 foreach ($service in $serviceCollection) {
   $getStatAfterStart = Get-Service | where {$_.name -eq $service}
   if ($getServiceStatus -eq "Running") {
