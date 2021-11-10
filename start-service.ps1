@@ -33,12 +33,12 @@ foreach ($service in $Services) {
   $getStatAfterStart = Get-Service | Where-Object {$_.name -eq $service}
   if ($getStatAfterStart.Status -eq "Running") {
 
-    Write-Output "[Succeed] Service $($getStatAfterStart.DisplayName) is running"
+    Write-Output "[INFO] Service $($service) is running"
 
   } else {
 
-    Write-Output "[Error] Service $($getStatAfterStart.DisplayName) is not running"
+    Write-Output "[ERROR] Service $($service) is not running"
 
   }
-  
+
 }
